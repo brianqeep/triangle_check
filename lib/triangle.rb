@@ -11,4 +11,25 @@ class Triangle
       false
     end
   end
+  define_method(:equilateral?) do
+    if @length.eql?(@width)&& @width.eql?(@height)
+      true
+    else
+      false
+    end
+  end
+  define_method(:scalene?) do
+    if @length!=(@width) && @length!=(@height) && @width!=(@height)
+      true
+    else
+      false
+    end
+  end
+  define_method(:isosceles?) do
+    if @length.eql?(@width) && @length!=(@height) || @length.eql?(@height) && @length!=(@width) || @height.eql?(@width) && @height!=(@length)  
+      true
+    else
+      false
+    end
+  end
 end

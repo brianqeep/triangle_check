@@ -12,4 +12,34 @@ describe(Triangle) do
       expect(test_triangle.triangle?()).to(eq(false))
     end
   end
+  describe('#equilateral?') do
+    it("returns true if all sides are equal") do
+      test_triangle = Triangle.new(5,5,5)
+      expect(test_triangle.equilateral?()).to(eq(true))
+    end
+    it("returns false if all sides are not equal") do
+      test_triangle = Triangle.new(5,5,6)
+      expect(test_triangle.equilateral?()).to(eq(false))
+    end
+  end
+  describe('#scalene?') do
+    it("returns true if all sides are not equal") do
+      test_triangle = Triangle.new(4,5,3)
+      expect(test_triangle.scalene?()).to(eq(true))
+    end
+    it("returns false if any of the sides are equal") do
+      test_triangle = Triangle.new(5,6,6)
+      expect(test_triangle.scalene?()).to(eq(false))
+    end
+  end
+  describe('#isosceles?') do
+    it("returns true two sides are equal") do
+      test_triangle = Triangle.new(5,5,8)
+      expect(test_triangle.isosceles?()).to(eq(true))
+    end
+    it("returns false if none or all sides are equal") do
+      test_triangle = Triangle.new(5,6,7)
+      expect(test_triangle.isosceles?()).to(eq(false))
+    end
+  end
 end
