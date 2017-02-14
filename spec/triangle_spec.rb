@@ -5,7 +5,7 @@ describe(Triangle) do
   describe('#triangle') do
     it("returns false if it is not a triangle") do
       test_triangle = Triangle.new(2,2,8)
-      expect(test_triangle.triangle()).to(eq(false))
+      expect(test_triangle.triangle()).to(eq("Triangle is invalid"))
     end
     it("returns true for equal sides") do
       test_triangle = Triangle.new(8,8,8)
