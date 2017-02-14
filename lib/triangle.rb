@@ -14,7 +14,7 @@ class Triangle
   define_method(:height) do
       @height
   end
-  define_method(:triangle?) do
+  define_method(:triangle) do
     if (@length+@width)<=@height || (@length+@height)<=@width || (@height+@width)<=@length
       false
     elsif @length.eql?(@width)&& @width.eql?(@height)

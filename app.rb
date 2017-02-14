@@ -14,9 +14,7 @@ get('/triangle') do
    @width = params[:width].to_i()
    @height = params[:height].to_i()
 
-  @winner = [params[:length],params[:width],params[:height]]
-  @winner = @winner.join(",")
-  @win = triangle?(@winner)
+  @winner = Triangle.new(@length,@width,@height).triangle()
 
   erb(:triangle)
 end

@@ -2,22 +2,22 @@ require('rspec')
 require('triangle')
 
 describe(Triangle) do
-  describe('#triangle?') do
+  describe('#triangle') do
     it("returns false if it is not a triangle") do
       test_triangle = Triangle.new(2,2,8)
-      expect(test_triangle.triangle?()).to(eq(false))
+      expect(test_triangle.triangle()).to(eq(false))
     end
     it("returns true for equal sides") do
       test_triangle = Triangle.new(8,8,8)
-      expect(test_triangle.triangle?()).to(eq("the triangle is an equilateral triangle"))
+      expect(test_triangle.triangle()).to(eq("the triangle is an equilateral triangle"))
     end
     it("returns true for non equal sides") do
       test_triangle = Triangle.new(8,9,10)
-      expect(test_triangle.triangle?()).to(eq("the triangle is a scalene triangle"))
+      expect(test_triangle.triangle()).to(eq("the triangle is a scalene triangle"))
     end
-    it("returns true two equa sides") do
+    it("returns true two equal sides") do
       test_triangle = Triangle.new(8,8,10)
-      expect(test_triangle.triangle?()).to(eq("the triangle is an isosceles triangle"))
+      expect(test_triangle.triangle()).to(eq("the triangle is an isosceles triangle"))
     end
   end
 end
